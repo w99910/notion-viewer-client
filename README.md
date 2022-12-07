@@ -1,7 +1,3 @@
-# Notion Viewer ( A simple viewer for Notion documents )
+# Notion Viewer ( A simple viewer for Notion documents with Laravel )
 
-## Installation
-
-```bash
-npm install notion-viewer
-```
+> ## This package is still under development.

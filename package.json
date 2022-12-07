@@ -1,7 +1,7 @@
 {
-    "name": "notion-viewer",
+    "name": "laravel-notion-viewer",
     "version": "0.0.1",
-    "description": "Notion Viewer ",
+    "description": "A simple viewer for Notion documents with Laravel",
     "main": "index.ts",
     "scripts": {
     },
