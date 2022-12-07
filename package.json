@@ -1,0 +1,19 @@
+{
+    "name": "notion-viewer",
+    "version": "0.0.1",
+    "description": "Notion Viewer ",
+    "main": "index.ts",
+    "scripts": {
+    },
+    "keywords": [
+        "notion",
+        "notion-viewer",
+        "laravel-notion"
+    ],
+    "dependencies": {
+        "prismjs": "^1.29.0",
+        "axios": "^0.25"
+    },
+    "author": "Zaw Lin Tun (w99910)",
+    "license": "MIT"
+}
