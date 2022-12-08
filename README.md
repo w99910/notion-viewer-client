@@ -13,7 +13,7 @@
     - [Renderer](#renderer)
 - [Supported Notion Block Types](#notion-block-types)
 - [Customizing Renderers](#addingremoving-renderers)
-- [License](#license)
+- [Support Me](#support-me)
 
 # How it works
 
@@ -24,6 +24,7 @@ get notion blocks from Notion Api.
 
 But you can also use your own server to get the blocks from Notion Api and pass the blocks to the `Renderer` class in
 your client.
+
 ---
 
 # Installation
@@ -153,7 +154,6 @@ The following are the block types supported by this package for now:
 ## Adding/Removing Renderers
 
 - Creating a compatible renderer
-    - Create a new class and implements `Renderable` interface.
 
 ```typescript
 import Renderable from 'notion-viewer-client/interfaces/Renderable';
@@ -207,13 +207,11 @@ Renderer.setRenderers([
 Renderer.setRenderers([]);
 ```
 
-## LICENSE
-
-- MIT
-
 ## Support Me
 
-[Buy me a coffee](https://www.buymeacoffee.com/zawlintun) if you like my work.
+If you want to support me, buy me a coffee via **Binance**.
+
+<img src="https://zawlintun.me/BinancePayQR.png" alt="binancePayQR" width="200"/>
 
 ## TODO
 
