@@ -55,6 +55,9 @@ export default class Renderer {
     private constructor() {
     }
 
+    /**
+     * Get current instance of renderer
+     */
     static getInstance() {
         if (!this.instance) {
             this.instance = new Renderer();
@@ -62,20 +65,46 @@ export default class Renderer {
         return this.instance;
     }
 
+    /**
+     * Set parent element
+     * @param element
+     */
     static setContainerElement(element: HTMLElement) {
         let instance = this.getInstance();
         instance._containerElement = element;
     }
 
+    /**
+     * Get current parent element
+     */
     get containerElement(): HTMLElement {
         return this._containerElement;
     }
 
+    /**
+     * Add a custom renderer to existing renderers.
+     * @param renderer
+     */
     static addRenderer(renderer: Renderable) {
         let instance = this.getInstance();
         instance.renderers.push(renderer);
     }
 
+    /**
+     * Remove a renderer by blockType
+     * @param blockType
+     */
+    static removeRenderer(blockType: string) {
+        let instance = this.getInstance();
+        instance.renderers = instance.renderers.filter((r) => {
+            return r.type() !== blockType;
+        });
+    }
+
+    /**
+     * Get renderer for a block
+     * @param block
+     */
     static getRenderer(block: Block): Renderable | null {
         let instance = this.getInstance();
         let render = instance.renderers.filter((renderer) => {
@@ -84,16 +113,27 @@ export default class Renderer {
         return render.length > 0 ? render[0] : null;
     }
 
-
+    /**
+     * Replace default renderers
+     * @param renderers
+     */
     static setRenderers(renderers: Renderable[]) {
         let instance = this.getInstance();
         instance.renderers = renderers;
     }
 
+    /**
+     * Parse page title from a page
+     * @param page
+     */
     static parseTitle(page: Page) {
         return '<h1 style="font-size: 2.5rem; font-weight: 600;">' + page.properties.title.title[0].plain_text + '</h1>';
     }
 
+    /**
+     * Parse rich text block to html
+     * @param richText
+     */
     static parseRichText(richText: RichText) {
         let text = richText.plain_text;
 
@@ -118,6 +158,11 @@ export default class Renderer {
         return text;
     }
 
+    /**
+     * Parse blocks
+     * @param blocks
+     * @param level some blocks have children blocks, and level is indicator how current block is nested.
+     */
     static parseBlocks(blocks: Block[], level: number = 0) {
         let instance = this.getInstance();
         let output = '';
@@ -130,16 +175,30 @@ export default class Renderer {
         return output;
     }
 
+    /**
+     * Add callback to be called after render
+     * @param callback
+     */
     static onAfterRender(callback: (renderer: Renderer) => void) {
         let instance = this.getInstance();
         instance.afterRender.push(callback);
     };
 
+    /**
+     * Add callback to be called before render
+     * @param callback
+     */
     static onBeforeRender(callback: (renderer: Renderer) => void) {
         let instance = this.getInstance();
         instance.beforeRender.push(callback);
     };
 
+    /**
+     * Render page
+     * @param page
+     * @param blocks
+     * @param containerElement
+     */
     static render(page: Page, blocks: Block[], containerElement: HTMLElement) {
         let instance = this.getInstance();
         let output = '';

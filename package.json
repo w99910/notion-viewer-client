@@ -1,14 +1,20 @@
 {
-    "name": "laravel-notion-viewer",
+    "name": "notion-viewer-client",
     "version": "0.0.1",
-    "description": "A simple viewer for Notion documents with Laravel",
+    "description": "A simple and easy to use package for rendering notion pages in your application.",
     "main": "index.ts",
     "scripts": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/w99910/notion-viewer-client"
     },
     "keywords": [
         "notion",
         "notion-viewer",
-        "laravel-notion"
+        "laravel-notion",
+        "notion-renderer",
+        "notion-render-laravel"
     ],
     "dependencies": {
         "prismjs": "^1.29.0",
