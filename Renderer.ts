@@ -138,7 +138,7 @@ export default class Renderer {
         let text = richText.plain_text;
 
         if (richText.annotations.bold) {
-            text = `<strong>${text}</strong>`;
+            text = `<strong style="font-weight: 600;">${text}</strong>`;
         }
         if (richText.annotations.strikethrough) {
             text = `<del>${text}</del>`;

@@ -11,7 +11,7 @@ export default class ToggleRenderer implements Renderable {
         output += `</summary>`;
         if (block.has_children && block.children) {
             level++;
-            output += `<div style="margin-left: 20px; display: flex; row-gap: 4px; flex-direction: column">${Renderer.parseBlocks(block.children, level)}</div>`;
+            output += `<div style="margin-left: 20px; margin-top:5px; display: flex; row-gap: 5px; flex-direction: column">${Renderer.parseBlocks(block.children, level)}</div>`;
         }
         output += `</details>`;
         return output;
