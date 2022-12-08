@@ -15,7 +15,7 @@ export default class BulletedListItemRenderer implements Renderable {
         output += '</li>'
         if (block.has_children && block.children && block.children.length > 0) {
             level++;
-            output += `<div style="padding-left: ${level * 10}px;">${Renderer.parseBlocks(block.children, level)}</div>`;
+            output += `<div>${Renderer.parseBlocks(block.children, level)}</div>`;
         }
         output += '</ul>';
         return output;
