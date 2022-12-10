@@ -152,6 +152,8 @@ export default class Renderer {
             text = `<code style="background: #f1f1f1; padding:2px; color:#fd7009">${text}</code>`;
         }
 
+        text = `<p style="mix-blend-mode: difference; color:${richText.annotations.color === 'default' ? 'auto' : 'light' + richText.annotations.color}">${text}</div>`
+
         if (richText.text.link) {
             text = `<a style="color:#3838ff" target="_blank" href="${richText.text.link.url}">${text}</a>`;
         }

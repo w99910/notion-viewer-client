@@ -4,11 +4,11 @@ import BaseRenderer from "../Renderer";
 
 export default class ParagraphRenderer implements Renderable {
     render(block: Block, level: number = 0,): string {
-        let output = '<p>';
+        let output = `<div style="color:${block.paragraph.color === 'default' ? 'auto' : 'light' + block.paragraph.color}" class="paragraph">`;
         block.paragraph.rich_text.forEach((text) => {
             output += BaseRenderer.parseRichText(text)
         });
-        output += '</p>'
+        output += '</div>'
         return output;
     }
 
