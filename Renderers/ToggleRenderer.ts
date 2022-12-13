@@ -4,7 +4,7 @@ import Renderer from "../Renderer";
 
 export default class ToggleRenderer implements Renderable {
     render(block: Block, level?: number, containerElement?: HTMLElement): string {
-        let output = `<details class="toggle-container"><summary class="toggle-title">`;
+        let output = `<details class="toggle-container"><summary style="display: flex; align-items: center" class="toggle-title">`;
         block.toggle.rich_text.forEach((text) => {
             output += Renderer.parseRichText(text);
         })

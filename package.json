@@ -1,6 +1,6 @@
 {
     "name": "notion-viewer-client",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "A simple and easy to use package for rendering notion pages in your application.",
     "main": "index.ts",
     "scripts": {
