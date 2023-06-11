@@ -6,7 +6,6 @@ import 'prismjs/components/prism-php.min';
 import 'prismjs/components/prism-git.min';
 import 'prismjs/components/prism-java.min';
 import 'prismjs/components/prism-mongodb.min';
-import 'prismjs/components/prism-nginx.min';
 import 'prismjs/components/prism-r.min';
 import 'prismjs/components/prism-sql.min';
 import 'prismjs/components/prism-bash.min';
